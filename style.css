@@ -120,6 +120,29 @@ body {
 .btn--yes:hover {
   transform: scale(1.2);
 }
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+footer .footername {
+  font-weight: bold;
+  color: #ff3366;
+}
+footer .footername:hover {
+  text-decoration: underline;
+  color: #ff1493;
+}
+.name-input {
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid pink;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* Animations */
 @keyframes moveAway {

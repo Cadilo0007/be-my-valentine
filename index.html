@@ -9,17 +9,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image" href="img/pixel-heart-pixelart-png.webp" />
     <title>Valentine</title>
   </head>
   <body>
     <main class="container">
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Enter your name..."
+        class="name-input"
+      />
       <img class="cat-img" src="img/cat-0.jpg" alt="Picture of a cat" />
       <p class="title">Will you be my Valentine?</p>
       <div class="buttons">
         <button type="button" class="btn btn--yes">Yes</button>
         <button type="button" class="btn btn--no">No</button>
-        <button type="button" class="btn btn--reset hidden">Try Again?</button>
-      </div>
+      </div> 
+      <footer>
+        <p class="">&copy; 2025 <span class="footername">Justine Leymark</span> | All rights reserved</p>
+        <p class="">With love & focus.</p>
+      </footer>
     </main>
     <script type="module" src="script.js"></script>
     <!-- Add this CDN in <head> if using confetti -->

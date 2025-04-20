@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Valentine</title>
   </head>
@@ -19,9 +18,12 @@
       <div class="buttons">
         <button type="button" class="btn btn--yes">Yes</button>
         <button type="button" class="btn btn--no">No</button>
+        <button type="button" class="btn btn--reset hidden">Try Again?</button>
       </div>
     </main>
-
     <script type="module" src="script.js"></script>
+    <!-- Add this CDN in <head> if using confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
   </body>
 </html>

@@ -16,15 +16,18 @@ yesButton.addEventListener("click", handleYesClick);
 noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
+
     const imageIndex = Math.min(noCount, MAX_IMAGES);
     changeImage(imageIndex);
-    resizeYesButton();
+    animateButtons();
     updateNoButtonText();
+
     if (noCount === MAX_IMAGES) {
       play = false;
     }
   }
 });
+
 
 function handleYesClick() {
   titleElement.innerHTML = "Yayyy!! :3";
@@ -61,3 +64,31 @@ function changeImage(image) {
 function updateNoButtonText() {
   noButton.innerHTML = generateMessage(noCount);
 }
+
+import confetti from "https://cdn.skypack.dev/canvas-confetti";
+
+// function handleYesClick() {
+//   titleElement.innerHTML = "Yayyy!! :3";
+//   buttonsContainer.classList.add("hidden");
+//   changeImage("yes");
+//   launchConfetti();
+// }
+
+function launchConfetti() {
+  confetti({
+    particleCount: 200,
+    spread: 70,
+    origin: { y: 0.6 },
+  });
+}
+noButton.addEventListener("mouseover", () => {
+  if (noCount >= 3 && play) {
+    const x = Math.floor(Math.random() * 300) - 150;
+    const y = Math.floor(Math.random() * 300) - 150;
+    noButton.style.transform = `translate(${x}px, ${y}px)`;
+    noButton.style.transition = "transform 0.3s ease";
+  }
+});
+yesButton.addEventListener("mouseover", () => {
+  noButton.style.transform = "none";
+});

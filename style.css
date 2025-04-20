@@ -1,72 +1,141 @@
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
-  background-color: #fff0f6;
-  font-family: "Protest Riot", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
 }
 
 .container {
-  height: 100vh;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 .cat-img {
-  width: 30rem;
-  height: 30rem;
-  margin-bottom: 2rem;
-  border-radius: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .title {
-  font-size: 3.6rem;
-  color: #f53699;
-  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 2rem;
+  color: #ff3366;
+  font-family: 'Pixelify Sans', cursive;
 }
 
 .buttons {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-
+  justify-content: space-around;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 1.5rem 2.5rem;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 4px;
-
-  color: white;
-  font-size: 1.6rem;
+  border-radius: 2rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  flex: 1 1 auto;
+  min-width: 100px;
+  max-width: 150px;
 }
 
 .btn--yes {
-  background-color: #40c057;
+  background-color: #ff69b4;
+  color: white;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.btn--yes:hover {
+  background-color: #ff1493;
 }
 
 .btn--no {
-  background-color: #f03e3e;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn--no:hover {
+  background-color: #bbb;
 }
 
 .hidden {
   display: none;
+}
+
+/* Responsive Text Sizes */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+.btn--yes:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes moveAway {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    transform: translateX(-60px) scale(0.8);
+  }
+}
+
+/* Dynamic styles that JS will add */
+.btn--grow {
+  transform: scale(1.6);
+}
+
+.btn--shrink-move {
+  animation: moveAway 0.3s ease forwards;
 }
